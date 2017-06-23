@@ -28,3 +28,27 @@
  .babelrc
  .eslint.js
 ```
+
+# 结合webpack跑通es6语法编译过程
+- webpack.config.js
+```
+npm install webpack@1.0.0 webpack-dev-server --save-dev
+```
+
+babel -> presets, plugin, loader
+```
+npm install babel-loader babel-core babel-preset-es2015 babel-plugin-add-module-exports --save-dev
+```
+
+#支持umd模块
+```
+library: LibraryName,
+libraryTarget: 'umd',
+umdNamedDefine: true
+```
+# webpack 小配置，方便开发
+- resolve
+  - extension 扩展民，简写
+  - root 默认搜索路径，绝对路径，可以是字符串或数组
+- devtool
+  -cheap-source-map 
