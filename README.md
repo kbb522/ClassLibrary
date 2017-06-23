@@ -49,6 +49,6 @@ umdNamedDefine: true
 # webpack 小配置，方便开发
 - resolve
   - extension 扩展民，简写
-  - root 默认搜索路径，绝对路径，可以是字符串或数组
+  - root 默认搜索路径，绝对路径，可以是字符串或数组, 比如用brower 配置root 以后，就不用每次带brower的路径了。方便使用。
 - devtool
-  -cheap-source-map 
+  -cheap-source-map
