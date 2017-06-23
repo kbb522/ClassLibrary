@@ -52,3 +52,44 @@ umdNamedDefine: true
   - root 默认搜索路径，绝对路径，可以是字符串或数组, 比如用brower 配置root 以后，就不用每次带brower的路径了。方便使用。
 - devtool
   -cheap-source-map
+
+# 支持环境变量
+```
+process.env // 在windows环境里有兼容问题
+yargs
+```
+```
+npm install yargs --save-dev
+webpack --progress --colors --env=PRO
+var args = require('yargs').argv
+
+args.evn == PRO
+```
+
+# 将用于生产环境的代码压缩
+```
+webpack.optimize.UglifyJsPlugin
+```
+
+# 使用eslint进行代码风格检查
+```
+npm install eslint eslint-loader --save-dev
+```
+eslint init
+1. 单纯的用eslint做检查。直接调用就可以。
+2. 在webpack.config.js里面做loader配置。
+
+# 支持单元测试
+```
+npm install mocha chai --save-dev
+mkdir test && touch ./test/index.spec.js
+配置 npm scripts test
+1. mocha --compilers js:babel-core/register -w  ./test/*.spec.js
+2. mocha --require babel-register -w  ./test/*.spec.js
+npm install babel-register --save-dev
+```
+PS:执行当前目录下的npm包而不是全局的npm包
+http://blog.csdn.net/danzhang1010/article/details/50528598
+查看有道笔记
+
+# 发布到npm和github

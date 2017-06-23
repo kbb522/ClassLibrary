@@ -4,8 +4,12 @@
   "description": "this is a javascript class library",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
-    "build": "webpack --progress --colors"
+    "test": "npm-run mocha --require babel-register -w ./test/*.spec.js",
+    "test2": "mocha --compilers js:babel-core/register -w  ./test/*.spec.js",
+    "build": "webpack --mode=pro",
+    "dev": "webpack --progress -colors --watch",
+    "lint": "eslint ./src",
+    "lintfix": "eslint --fix ./src"
   },
   "repository": {
     "type": "git",
@@ -24,8 +28,15 @@
     "babel-loader": "^7.1.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "eslint": "^4.0.0",
+    "eslint-loader": "^1.8.0",
+    "eslint-plugin-react": "^7.1.0",
+    "mocha": "^3.4.2",
     "webpack": "^1.15.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^2.5.0",
+    "yargs": "^8.0.2"
   },
   "bugs": {
     "url": "https://github.com/kbb522/ClassLibrary/issues"
